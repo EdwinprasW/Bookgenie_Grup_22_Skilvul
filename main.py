@@ -102,7 +102,10 @@ if st.button("Prediksi"):
         # Load model SVM dan vectorizer
         with open("./svm_model.pkl", 'rb') as file:
             loaded_model = pickle.load(file)
-        
+            
+            
+        with zipfile.ZipFile('tfidf_vectorizer.zip', 'r') as zip_ref:
+             zip_ref.extractall()
         with open("./tfidf_vectorizer.pkl", 'rb') as file:
             tfidf = pickle.load(file)
         
